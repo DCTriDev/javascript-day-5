@@ -1,3 +1,62 @@
+//Kiem Tra Dau Rot
+let diemChuanEl = document.querySelector('#diem-chuan')
+let mon1El = document.querySelector('#mon-1')
+let mon2El = document.querySelector('#mon-2')
+let mon3El = document.querySelector('#mon-3')
+let khuVucEl = document.querySelector('#khu-vuc')
+let doiTuongEl = document.querySelector('#doi-tuong')
+let btnKiemTraDauRot = document.querySelector('#btn-dau-rot')
+let ketQuaDauRot = document.querySelector('#ket-qua-dau-rot')
+
+btnKiemTraDauRot.addEventListener('click', function () {
+    let diemChuan = diemChuanEl.value * 1
+    let mon1 = mon1El.value * 1
+    let mon2 = mon2El.value * 1
+    let mon3 = mon3El.value * 1
+    let khuVuc = khuVucEl.value
+    let doiTuong = doiTuongEl.value
+    let dauRot
+    let tongDiem
+
+    if (mon1 > 0 && mon2 > 0 && mon3 > 0) {
+        tongDiem = mon1 + mon2 + mon3 + KiemTraKhuVuc(khuVuc) + KiemTraDoiTuong(doiTuong)
+        if(tongDiem >= diemChuan){
+            dauRot = 'Bạn đã ĐẬU. Tổng số điểm đạt được là: ' + tongDiem
+        }else
+            dauRot = 'Bạn đã RỚT. Tổng số điểm đạt được là: ' + tongDiem
+    }else{
+        dauRot = 'Bạn đã RỚT vì có môn 0 điểm.'
+    }
+    ketQuaDauRot.innerHTML = dauRot
+
+    function KiemTraKhuVuc(khuVuc) {
+        switch (khuVuc) {
+            case 'A':
+                return 2
+            case 'B':
+                return 1
+            case 'C':
+                return 0.5
+            default:
+                return 0
+        }
+    }
+
+    function KiemTraDoiTuong(doiTuong) {
+        switch (doiTuong) {
+            case '1':
+                return 2.5
+            case '2':
+                return 1.5
+            case '3':
+                return 1
+            default:
+                return 0
+        }
+    }
+})
+
+
 //Tinh Tien Dien
 let sokwEl = document.querySelector('#kw-tieu-thu')
 let btnTinhTienDien = document.querySelector('#tinh-tien')
@@ -112,6 +171,7 @@ function TinhTienCap() {
         tienCap = CA_NHAN_PHI_XU_LY + CA_NHAN_DV_CO_BAN + soKenhCC * CA_NHAN_KENH_CC
     }
     tienCapEl.value = tienCap.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+
     function TinhTienSoKetNoi(soKetNoi) {
         if (soKetNoi <= 10)
             return soKetNoi * GIA_KET_NOI_1_TO_10

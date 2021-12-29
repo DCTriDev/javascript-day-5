@@ -2,25 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Title</title>
 </head>
 <body class="text-center py-5 bg-light container">
     <h1>BT JS Buổi 5</h1>
-
     <!--    BT 1    -->
+    <div class="border border-primary rounded py-3 my-3">
+        <h2>Quản Lý Tuyển Sinh</h2>
+        <h4>Điểm chuẩn hội đồng</h4>
+        <input id="diem-chuan" placeholder="Điểm chuẩn hội đồng" type="text">
+        <h4>Nhập điểm 3 môn</h4>
+        <input id="mon-1" placeholder="Môn thứ nhất" type="text"><br><br>
+        <input id="mon-2" placeholder="Môn thứ hai" type="text"><br><br>
+        <input id="mon-3" placeholder="Môn thứ ba" type="text"><br><br>
+        <h4>Chọn khu vực (X nếu không thuộc khu vực ưu tiên)</h4>
+        <input id="khu-vuc" placeholder="Nhập khu vực" type="text"><br><br>
+        <h4>Chọn đối tượng ưu tiên (0 nếu không thuộc đối tượng ưu tiên)</h4>
+        <input id="doi-tuong" placeholder="Nhập đối tượng" type="text"><br><br>
+        <button class="btn-primary btn" id="btn-dau-rot">Kiểm tra</button>
+        <br><br>
+        <p id="ket-qua-dau-rot"></p>
+    </div>
+
+
+    <!--    BT 2    -->
     <div class="border border-primary rounded py-3 my-3">
         <h2>Tính Tiền Điện</h2>
         <h4>Tên Khách Hàng</h4>
         <input placeholder="Tên khách hàng" type="text">
         <h4>Số kw tiêu thụ</h4>
-        <input id="kw-tieu-thu" placeholder="Số kw tiêu thụ:" type="text"><br><br>
+        <input id="kw-tieu-thu" placeholder="Số kw tiêu thụ" type="text"><br><br>
         <button class="btn-primary btn" id="tinh-tien">Tính Tiền Điện</button>
         <br><br>
         <input id="thanh-tien" placeholder="Thành Tiền" type="text">
     </div>
 
-    <!--    BT 2    -->
+    <!--    BT 3    -->
     <div class="border border-primary rounded py-3 my-3">
         <h2>Tính Tiền Thuế Thu Nhập Cá Nhân</h2>
         <h4>Tổng Thu Nhập Năm</h4>
@@ -32,7 +50,7 @@
         <input id="tien-thue" placeholder="Tiền Thuế" type="text">
     </div>
 
-    <!--    BT 3    -->
+    <!--    BT 4    -->
     <div class="border border-primary rounded py-3 my-3">
         <h2>Tính Tiền Cáp</h2>
 
@@ -55,9 +73,9 @@
     </div>
 
     <!--    Script    -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-
-    <script src="/js/script.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--    Custom script   -->
+    <script src="js/script.js"></script>
 </body>
 </html>
