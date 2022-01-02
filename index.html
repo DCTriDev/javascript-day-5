@@ -1,81 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <title>Title</title>
-</head>
-<body class="text-center py-5 bg-light container">
-    <h1>BT JS Buổi 5</h1>
-    <!--    BT 1    -->
-    <div class="border border-primary rounded py-3 my-3">
-        <h2>Quản Lý Tuyển Sinh</h2>
-        <h4>Điểm chuẩn hội đồng</h4>
-        <input id="diem-chuan" placeholder="Điểm chuẩn hội đồng" type="text">
-        <h4>Nhập điểm 3 môn</h4>
-        <input id="mon-1" placeholder="Môn thứ nhất" type="text"><br><br>
-        <input id="mon-2" placeholder="Môn thứ hai" type="text"><br><br>
-        <input id="mon-3" placeholder="Môn thứ ba" type="text"><br><br>
-        <h4>Chọn khu vực (X nếu không thuộc khu vực ưu tiên)</h4>
-        <input id="khu-vuc" placeholder="Nhập khu vực" type="text"><br><br>
-        <h4>Chọn đối tượng ưu tiên (0 nếu không thuộc đối tượng ưu tiên)</h4>
-        <input id="doi-tuong" placeholder="Nhập đối tượng" type="text"><br><br>
-        <button class="btn-primary btn" id="btn-dau-rot">Kiểm tra</button>
-        <br><br>
-        <p id="ket-qua-dau-rot"></p>
-    </div>
-
-
-    <!--    BT 2    -->
-    <div class="border border-primary rounded py-3 my-3">
-        <h2>Tính Tiền Điện</h2>
-        <h4>Tên Khách Hàng</h4>
-        <input placeholder="Tên khách hàng" type="text">
-        <h4>Số kw tiêu thụ</h4>
-        <input id="kw-tieu-thu" placeholder="Số kw tiêu thụ" type="text"><br><br>
-        <button class="btn-primary btn" id="tinh-tien">Tính Tiền Điện</button>
-        <br><br>
-        <input id="thanh-tien" placeholder="Thành Tiền" type="text">
-    </div>
-
-    <!--    BT 3    -->
-    <div class="border border-primary rounded py-3 my-3">
-        <h2>Tính Tiền Thuế Thu Nhập Cá Nhân</h2>
-        <h4>Tổng Thu Nhập Năm</h4>
-        <input id="thu-nhap" placeholder="Thu Nhập Năm" type="text"><br>
-        <h4>Số Người Phụ Thuộc</h4>
-        <input id="nguoi-phu-thuoc" placeholder="Người Phụ Thuộc" type="text"><br><br>
-        <button class="btn-primary btn" id="tinh-thue">Tính Thuế</button>
-        <br><br>
-        <input id="tien-thue" placeholder="Tiền Thuế" type="text">
-    </div>
-
-    <!--    BT 4    -->
-    <div class="border border-primary rounded py-3 my-3">
-        <h2>Tính Tiền Cáp</h2>
-
-        <h4>Mã Khách Hàng</h4>
-        <input id="ma-kh" type="text"><br>
-        <h4>Loại Khách Hàng</h4>
-        <input checked id="doanh-nghiep-radio" name="loai-kh" type="radio" value="doanh-nghiep">
-        <label for="doanh-nghiep-radio">Doanh Nghiệp</label>
-        <input id="ca-nhan-radio" name="loai-kh" type="radio" value="ca-nhan">
-        <label for="ca-nhan-radio">Cá Nhân</label>
-        <div id="is-doanh-nghiep">
-            <h4>Số Kết Nối</h4>
-            <input id="so-ket-noi" type="text">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <title>Title</title>
+    </head>
+    <body class="text-center py-5 bg-light container">
+        <h1>BT JS Buổi 5</h1>
+        <!--    BT 1    -->
+        <div class="border border-primary rounded py-3 my-3">
+            <h2>Quản Lý Tuyển Sinh</h2>
+            <h4>Điểm chuẩn hội đồng</h4>
+            <input
+                id="diem-chuan"
+                placeholder="Điểm chuẩn hội đồng"
+                type="text"
+            />
+            <h4>Nhập điểm 3 môn</h4>
+            <input
+                id="mon-1"
+                placeholder="Môn thứ nhất"
+                type="text"
+            /><br /><br />
+            <input
+                id="mon-2"
+                placeholder="Môn thứ hai"
+                type="text"
+            /><br /><br />
+            <input
+                id="mon-3"
+                placeholder="Môn thứ ba"
+                type="text"
+            /><br /><br />
+            <h4>Chọn khu vực (X nếu không thuộc khu vực ưu tiên)</h4>
+            <input
+                id="khu-vuc"
+                placeholder="Nhập khu vực"
+                type="text"
+            /><br /><br />
+            <h4>
+                Chọn đối tượng ưu tiên (0 nếu không thuộc đối tượng ưu tiên)
+            </h4>
+            <input
+                id="doi-tuong"
+                placeholder="Nhập đối tượng"
+                type="text"
+            /><br /><br />
+            <button class="btn-primary btn" id="btn-dau-rot">Kiểm tra</button>
+            <br /><br />
+            <p id="ket-qua-dau-rot"></p>
         </div>
-        <h4>Số Kênh Cao Cấp</h4>
-        <input id="so-kenh-cc" type="text"><br><br>
-        <button class="btn-primary btn" id="tinh-tien-cap">Tính Tiền Cáp</button>
-        <br><br>
-        <input id="tien-cap" type="text">
-    </div>
 
-    <!--    Script    -->
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!--    Custom script   -->
-    <script src="js/script.js"></script>
-</body>
+        <!--    BT 2    -->
+        <div class="border border-primary rounded py-3 my-3">
+            <h2>Tính Tiền Điện</h2>
+            <h4>Tên Khách Hàng</h4>
+            <input placeholder="Tên khách hàng" type="text" />
+            <h4>Số kw tiêu thụ</h4>
+            <input
+                id="kw-tieu-thu"
+                placeholder="Số kw tiêu thụ"
+                type="text"
+            /><br /><br />
+            <button class="btn-primary btn" id="tinh-tien">
+                Tính Tiền Điện
+            </button>
+            <br /><br />
+            <input id="thanh-tien" placeholder="Thành Tiền" type="text" />
+        </div>
+
+        <!--    BT 3    -->
+        <div class="border border-primary rounded py-3 my-3">
+            <h2>Tính Tiền Thuế Thu Nhập Cá Nhân</h2>
+            <h4>Tổng Thu Nhập Năm</h4>
+            <input id="thu-nhap" placeholder="Thu Nhập Năm" type="text" /><br />
+            <h4>Số Người Phụ Thuộc</h4>
+            <input
+                id="nguoi-phu-thuoc"
+                placeholder="Người Phụ Thuộc"
+                type="text"
+            /><br /><br />
+            <button class="btn-primary btn" id="tinh-thue">Tính Thuế</button>
+            <br /><br />
+            <input id="tien-thue" placeholder="Tiền Thuế" type="text" />
+        </div>
+
+        <!--    BT 4    -->
+        <div class="border border-primary rounded py-3 my-3">
+            <h2>Tính Tiền Cáp</h2>
+
+            <h4>Mã Khách Hàng</h4>
+            <input id="ma-kh" type="text" /><br />
+            <h4>Loại Khách Hàng</h4>
+            <input
+                checked
+                id="doanh-nghiep-radio"
+                name="loai-kh"
+                type="radio"
+                value="doanh-nghiep"
+            />
+            <label for="doanh-nghiep-radio">Doanh Nghiệp</label>
+            <input
+                id="ca-nhan-radio"
+                name="loai-kh"
+                type="radio"
+                value="ca-nhan"
+            />
+            <label for="ca-nhan-radio">Cá Nhân</label>
+            <div id="is-doanh-nghiep">
+                <h4>Số Kết Nối</h4>
+                <input id="so-ket-noi" type="text" />
+            </div>
+            <h4>Số Kênh Cao Cấp</h4>
+            <input id="so-kenh-cc" type="text" /><br /><br />
+            <button class="btn-primary btn" id="tinh-tien-cap">
+                Tính Tiền Cáp
+            </button>
+            <br /><br />
+            <input id="tien-cap" type="text" />
+        </div>
+
+        <!--    Script    -->
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!--    Custom script   -->
+        <script src="js/script.js"></script>
+    </body>
 </html>

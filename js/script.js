@@ -73,21 +73,22 @@ btnTinhTienDien.addEventListener('click', function () {
     const PRICE3 = PRICE2 + 100 * LEVEL3
     const PRICE4 = PRICE3 + 150 * LEVEL4
 
-
-    let sokw_tieu_thu = sokwEl.value * 1
-    let thanhTien
-    if (sokw_tieu_thu <= 50) {
-        thanhTien = sokw_tieu_thu * LEVEL1
-    } else if (sokw_tieu_thu <= 100) {
-        thanhTien = PRICE1 + (sokw_tieu_thu - 50) * LEVEL2
-    } else if (sokw_tieu_thu <= 200) {
-        thanhTien = PRICE2 + (sokw_tieu_thu - 100) * LEVEL3
-    } else if (sokw_tieu_thu <= 350) {
-        thanhTien = PRICE3 + (sokw_tieu_thu - 200) * LEVEL4
-    } else {
-        thanhTien = PRICE4 + (sokw_tieu_thu - 350) * LEVEL5
-    }
-    tienDien.value = thanhTien.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' vnd'
+    let soKwTieuThu = sokwEl.value * 1
+    if(soKwTieuThu>=0) {
+        let thanhTien
+        if (soKwTieuThu <= 50) {
+            thanhTien = soKwTieuThu * LEVEL1
+        } else if (soKwTieuThu <= 100) {
+            thanhTien = PRICE1 + (soKwTieuThu - 50) * LEVEL2
+        } else if (soKwTieuThu <= 200) {
+            thanhTien = PRICE2 + (soKwTieuThu - 100) * LEVEL3
+        } else if (soKwTieuThu <= 350) {
+            thanhTien = PRICE3 + (soKwTieuThu - 200) * LEVEL4
+        } else {
+            thanhTien = PRICE4 + (soKwTieuThu - 350) * LEVEL5
+        }
+        tienDien.value = thanhTien.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' vnd'
+    }else alert("Vui lòng nhập lại số Kw Tiêu Thụ!")
 })
 
 //======================================================================
@@ -99,13 +100,15 @@ let tienThueEl = document.querySelector('#tien-thue')
 btnTinhThue.addEventListener('click', function () {
     let thuNhap = thuNhapEl.value * 1
     let nguoiPhuThuoc = nguoiPhuThuocEl.value * 1
-    let thuNhapChiuThue = thuNhap - (nguoiPhuThuoc * 1600000) - 4000000
-    if (thuNhapChiuThue < 0) {
-        tienThueEl.value = "0 vnd"
-    } else {
-        let tienThue = thuNhapChiuThue * ThueSuat(thuNhapChiuThue)
-        tienThueEl.value = tienThue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' vnd'
-    }
+    if(thuNhap>=0 && nguoiPhuThuoc>=0) {
+        let thuNhapChiuThue = thuNhap - (nguoiPhuThuoc * 1600000) - 4000000
+        if (thuNhapChiuThue < 0) {
+            tienThueEl.value = "0 vnd"
+        } else {
+            let tienThue = thuNhapChiuThue * ThueSuat(thuNhapChiuThue)
+            tienThueEl.value = tienThue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' vnd'
+        }
+    }else alert("Vui lòng nhập lại Thu Nhập, Số Người Phụ Thuộc!")
 })
 
 
@@ -165,12 +168,14 @@ function TinhTienCap() {
     let soKetNoi = soKetNoiEl.value * 1
     let soKenhCC = soKenhCCEl.value * 1
     let tienCap
-    if (loaiKH == DOANH_NGHIEP) {
-        tienCap = DOANH_NGHIEP_PHI_XU_LY + TinhTienSoKetNoi(soKetNoi) + soKenhCC * DOANH_NGHIEP_KENH_CC
-    } else {
-        tienCap = CA_NHAN_PHI_XU_LY + CA_NHAN_DV_CO_BAN + soKenhCC * CA_NHAN_KENH_CC
-    }
-    tienCapEl.value = tienCap.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    if(soKetNoi>=0 && soKenhCC >=0) {
+        if (loaiKH == DOANH_NGHIEP) {
+            tienCap = DOANH_NGHIEP_PHI_XU_LY + TinhTienSoKetNoi(soKetNoi) + soKenhCC * DOANH_NGHIEP_KENH_CC
+        } else {
+            tienCap = CA_NHAN_PHI_XU_LY + CA_NHAN_DV_CO_BAN + soKenhCC * CA_NHAN_KENH_CC
+        }
+        tienCapEl.value = tienCap.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    }else alert("Vui lòng nhập lại Số Kênh Cao Cấp, Số Kết Nối")
 
     function TinhTienSoKetNoi(soKetNoi) {
         if (soKetNoi <= 10)
