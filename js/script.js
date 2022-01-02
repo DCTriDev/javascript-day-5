@@ -124,7 +124,7 @@ function ThueSuat(thuNhapChiuThue) {
     else if (thuNhapChiuThue <= 624000000)
         return 25 / 100
     else if (thuNhapChiuThue <= 960000000)
-        return 10 / 100
+        return 30 / 100
     else return 35 / 100
 }
 
